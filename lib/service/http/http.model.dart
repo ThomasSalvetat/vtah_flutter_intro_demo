@@ -1,0 +1,2 @@
+enum HttpSendOperation { POST, PUT, PATCH }
+enum HttpError { NOT_FOUND, UNAUTHORIZED, PARSING, UNPROCESSABLE, UNKNOWN }
