@@ -4,7 +4,8 @@ import 'package:vtah_flutter_intro_demo/model/tvshow.model.dart';
 class TvShowConverter {
   static List<TvShowModel> toModel(TvShowApiModel apiModel) {
     return apiModel.feed.results
-        .map((result) => TvShowModel(artistName: result.artistName))
+        .map((result) => TvShowModel(
+            artistName: result.artistName, artworkUrl: result.artworkUrl))
         .toList();
   }
 }

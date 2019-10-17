@@ -34,10 +34,12 @@ class _FeedApiModel {
 @immutable
 @JsonSerializable(includeIfNull: false)
 class _FeedResultApiModel {
-  const _FeedResultApiModel(this.artistName);
+  const _FeedResultApiModel(this.artistName, this.artworkUrl);
 
   @JsonKey(name: "artistName")
   final String artistName;
+  @JsonKey(name: "artworkUrl100")
+  final String artworkUrl;
 
   factory _FeedResultApiModel.fromJson(Map<String, dynamic> json) =>
       _$_FeedResultApiModelFromJson(json);

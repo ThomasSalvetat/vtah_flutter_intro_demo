@@ -53,6 +53,7 @@ Map<String, dynamic> _$_FeedApiModelToJson(_FeedApiModel instance) {
 _FeedResultApiModel _$_FeedResultApiModelFromJson(Map<String, dynamic> json) {
   return _FeedResultApiModel(
     json['artistName'] as String,
+    json['artworkUrl100'] as String,
   );
 }
 
@@ -66,5 +67,6 @@ Map<String, dynamic> _$_FeedResultApiModelToJson(_FeedResultApiModel instance) {
   }
 
   writeNotNull('artistName', instance.artistName);
+  writeNotNull('artworkUrl100', instance.artworkUrl);
   return val;
 }

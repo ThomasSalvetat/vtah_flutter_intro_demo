@@ -4,7 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vtah_flutter_intro_demo/bloc/tvshow/TvShowAction.dart';
 import 'package:vtah_flutter_intro_demo/bloc/tvshow/TvShowBloc.dart';
 import 'package:vtah_flutter_intro_demo/bloc/tvshow/TvShowState.dart';
-import 'package:vtah_flutter_intro_demo/ui/components/tvshow/TvShowListViewMaterial.dart';
+import 'package:vtah_flutter_intro_demo/model/tvshow.model.dart';
+import 'package:vtah_flutter_intro_demo/ui/components/PlatformBuilder.dart';
+import 'package:vtah_flutter_intro_demo/ui/view/tvshow/TvShowListViewCupertino.dart';
+import 'package:vtah_flutter_intro_demo/ui/view/tvshow/TvShowListViewMaterial.dart';
 
 class TvShowListView extends StatefulWidget {
   @override
@@ -27,7 +30,12 @@ class _TvShowListViewState extends State<TvShowListView> {
     return BlocBuilder<TvShowBloc, TvShowState>(
         bloc: tvShowBloc,
         condition: (previousState, newState) => previousState != newState,
-        builder: (context, state) =>
-            TvShowListViewMaterial(tvShows: state.data));
+        builder: (context, state) => PlatformBuilder(
+            builder: (context, isIOS) =>
+                _buildView(isIOS, "TvShow", state.data)));
   }
+
+  _buildView(bool isIOS, String title, List<TvShowModel> tvShows) => isIOS
+      ? TvShowListViewCupertino(title: title, tvShows: tvShows)
+      : TvShowListViewMaterial(title: title, tvShows: tvShows);
 }

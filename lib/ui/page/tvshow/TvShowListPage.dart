@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vtah_flutter_intro_demo/bloc/tvshow/TvShowBloc.dart';
 import 'package:vtah_flutter_intro_demo/business/tvshow/tvshow.api.http.dart';
 import 'package:vtah_flutter_intro_demo/business/tvshow/tvshow.repository.dart';
-import 'package:vtah_flutter_intro_demo/ui/components/tvshow/TvShowListView.dart';
+import 'package:vtah_flutter_intro_demo/ui/view/tvshow/TvShowListView.dart';
 
 class TvShowListPage extends StatelessWidget {
   @override
