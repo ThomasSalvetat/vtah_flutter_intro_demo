@@ -32,10 +32,15 @@ class _TvShowListViewState extends State<TvShowListView> {
         condition: (previousState, newState) => previousState != newState,
         builder: (context, state) => PlatformBuilder(
             builder: (context, isIOS) =>
-                _buildView(isIOS, "TvShow", state.data)));
+                _buildView(isIOS, "TvShow", "Refresh", state.data)));
   }
 
-  _buildView(bool isIOS, String title, List<TvShowModel> tvShows) => isIOS
-      ? TvShowListViewCupertino(title: title, tvShows: tvShows)
-      : TvShowListViewMaterial(title: title, tvShows: tvShows);
+  _buildView(bool isIOS, String title, String refreshLabel, List<TvShowModel> tvShows) => isIOS
+      ? TvShowListViewCupertino(title: title, tvShows: tvShows, refreshLabel: refreshLabel, onRefresh: _onRefresh)
+      : TvShowListViewMaterial(title: title, tvShows: tvShows, refreshLabel: refreshLabel, onRefresh: _onRefresh);
+
+  _onRefresh() {
+    final TvShowBloc tvShowBloc = BlocProvider.of<TvShowBloc>(context);
+    tvShowBloc.dispatch(TvShowAction(event: TvShowEvent.fetch));
+  }
 }

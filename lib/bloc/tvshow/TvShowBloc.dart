@@ -19,7 +19,15 @@ class TvShowBloc extends Bloc<TvShowAction, TvShowState> {
   @override
   Stream<TvShowState> mapEventToState(TvShowAction action) async* {
     switch (action.event) {
+      case TvShowEvent.reset:
+        yield currentState.rebuild((b) => b
+          ..data = []
+          ..count = 0);
+        break;
       case TvShowEvent.fetch:
+        yield currentState.rebuild((b) => b
+          ..data = []
+          ..count = 0);
         try {
           List<TvShowModel> tvShows = await tvShowService.fetch();
           yield currentState.rebuild((b) => b
@@ -32,4 +40,5 @@ class TvShowBloc extends Bloc<TvShowAction, TvShowState> {
         break;
     }
   }
+
 }

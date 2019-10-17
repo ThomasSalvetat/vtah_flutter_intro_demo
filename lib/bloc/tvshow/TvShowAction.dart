@@ -1,4 +1,4 @@
-enum TvShowEvent { fetch }
+enum TvShowEvent { reset, fetch }
 
 class TvShowAction {
   const TvShowAction({this.event});
