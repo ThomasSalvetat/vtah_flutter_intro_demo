@@ -1,9 +1,9 @@
+import 'package:vtah_flutter_intro_demo/business/tvshow/tvshow.api.dart';
+import 'package:vtah_flutter_intro_demo/business/tvshow/tvshow.converter.dart';
 import 'package:vtah_flutter_intro_demo/model/tvshow.model.dart';
-import 'package:vtah_flutter_intro_demo/service/tvshow/tvshow.api.dart';
-import 'package:vtah_flutter_intro_demo/service/tvshow/tvshow.converter.dart';
 
-class TvShowService {
-  const TvShowService(this.api);
+class TvShowRepository {
+  const TvShowRepository(this.api);
 
   final TvShowApi api;
 

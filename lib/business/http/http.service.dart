@@ -4,8 +4,8 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:quiver/core.dart';
+import 'package:vtah_flutter_intro_demo/business/http/http.model.dart';
 import 'package:vtah_flutter_intro_demo/model/error.model.dart';
-import 'package:vtah_flutter_intro_demo/service/http/http.model.dart';
 
 class HttpService {
   static const _TIMEOUT = Duration(seconds: 10);

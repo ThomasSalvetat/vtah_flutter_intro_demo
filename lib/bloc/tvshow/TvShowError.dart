@@ -1,0 +1,1 @@
+enum TvShowError { fetch }

@@ -1,6 +1,6 @@
-import 'package:vtah_flutter_intro_demo/service/http/http.service.dart';
-import 'package:vtah_flutter_intro_demo/service/tvshow/tvshow.api.dart';
-import 'package:vtah_flutter_intro_demo/service/tvshow/tvshow.api.model.dart';
+import 'package:vtah_flutter_intro_demo/business/http/http.service.dart';
+import 'package:vtah_flutter_intro_demo/business/tvshow/tvshow.api.dart';
+import 'package:vtah_flutter_intro_demo/business/tvshow/tvshow.api.model.dart';
 
 class TvShowHttpService implements TvShowApi {
   static TvShowApiModel _fromJson(Map<String, dynamic> json) =>
